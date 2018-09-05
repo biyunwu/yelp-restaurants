@@ -1,0 +1,20 @@
+<% include ./partials/header %>
+<div class="container">
+        <div class="hidden-xs hidden-md hidden-lg"><br></div>
+        <h1 style="text-align: center">Login</h1>
+        <div style="width: 30%; margin: 3% auto">
+            <form action="/login", method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="username", placeholder="username"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="password", placeholder="password"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a href="/restaurant">Back to all restaurants</a>
+        </div>
+    </div>
+<% include ./partials/footer %>

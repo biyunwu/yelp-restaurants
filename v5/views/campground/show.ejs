@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="hidden-xs hidden-md hidden-lg"><br></div>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>YelpCamp</h3>
+            <ul class="list-group">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card">
+                <img class="card-img-top" src="<%= camp.image%>" alt="An image of <%= camp.name %>">
+                <div class="card-body">
+                    <a href="/campground/<%= camp._id %>" class="card-title"><%= camp.name %></a>
+                    <p class="float-right"><strong>$9.99 per night</strong></p>
+                    <hr>
+                    <p class="card-text"><%= camp.description %></p>
+                    <a href="/campground" class="btn btn-primary">Back to all campgrounds</a>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-md hidden-lg"><br></div>
+            
+            <div class="card bg-light">
+                <div class="card-body">
+                    <a class="btn btn-success float-right" href="/campground/<%= camp._id%>/comments/new">Add new comment</a>
+                </div>
+                
+                <% camp.comments.forEach(function(comment){ %>
+                    <div class="col-md-12">
+                        <p class="float-right">time</p>
+                        <p><strong><%= comment.author %></strong></p>
+
+                        <p><%= comment.text %></p>
+                    </div>
+                <% }); %>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="hidden-xs hidden-md hidden-lg"><br></div>
+
+<% include ../partials/footer %>
+

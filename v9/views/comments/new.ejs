@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<h1>Add new comment for <strong><%= restaurant.name%></strong></h1>
+<img src="<% restaurant.image %>">
+<div style="width: 30%; margin: 3% auto">
+            <form action="/restaurant/<%= restaurant._id %>/comments", method="POST">
+                <!--<div class="form-group">-->
+                <!--    <input class="form-control" type="tetx", name="comment[author]", placeholder="name"></input>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="comment[text]", placeholder="your review"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a href="/restaurant/<%= restaurant._id %>">Back to <strong><%= restaurant.name%></strong></a>
+</div>
+<% include ../partials/footer %>

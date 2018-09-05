@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="hidden-xs hidden-md hidden-lg"><br></div>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Restaurants NYC</h3>
+            <ul class="list-group">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card">
+                <img class="card-img-top" src="<%= restaurant.image%>" alt="An image of <%= restaurant.name %>">
+                <div class="card-body">
+                    <a href="/restaurant/<%= restaurant._id %>" class="card-title"><%= restaurant.name %></a>
+                    <p class="float-right"><strong>$35.00/person</strong></p>
+                    <hr>
+                    <p class="card-text"><%= restaurant.description %></p>
+                    <a href="/restaurant" class="btn btn-primary">Back to all restaurants</a>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-md hidden-lg"><br></div>
+            
+            <div class="card bg-light">
+                <div class="card-body">
+                    <a class="btn btn-success float-right" href="/restaurant/<%= restaurant._id%>/comments/new">Add new comment</a>
+                </div>
+                
+                <% restaurant.comments.forEach(function(comment){ %>
+                    <div class="col-md-12">
+                        <p class="float-right">time</p>
+                        <p><strong><%= comment.author.username %></strong></p>
+
+                        <p><%= comment.text %></p>
+                    </div>
+                <% }); %>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="hidden-xs hidden-md hidden-lg"><br></div>
+
+<% include ../partials/footer %>
+

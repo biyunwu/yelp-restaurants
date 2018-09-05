@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+<h1><%= camp.name %></h1>
+<img src="<%= camp.image%>" alt="An image of <%= camp.name %>">
+<h4>Description:</h4>
+<p><%= camp.description %></p>
+<a class="btn btn-success" href="/campground/<%= camp._id%>/comments/new">Share your experience with this camp?</a>
+<h4>Comments:</h4>
+<% camp.comments.forEach(function(comment){ %>
+    <p><%= comment.author %> - <%= comment.text %></p>
+<% }); %>
+<% include ../partials/footer %>
+

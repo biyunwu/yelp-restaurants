@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+    <div class="container">
+        <h1 style="text-align: center">Edit <%= restaurant.name%></h1>
+        <div style="width: 30%; margin: 3% auto">
+            <form action="/restaurant/<%= restaurant._id%>?_method=PUT", method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="restaurant[name]", value="<%= restaurant.name %>"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="restaurant[image]", value="<%= restaurant.image %>"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="restaurant[description]", value="<%= restaurant.description %>"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a href="/restaurant">Back to all restaurants</a>
+        </div>
+    </div>
+<% include ../partials/footer %>

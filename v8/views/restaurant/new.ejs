@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+    <div class="container">
+        <h1 style="text-align: center">Add new restaurant</h1>
+        <div style="width: 30%; margin: 3% auto">
+            <form action="/restaurant", method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="name", placeholder="restaurant's name"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="image", placeholder="image url"></input>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="tetx", name="description", placeholder="introduction"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a href="/restaurant">Back to all restaurants</a>
+        </div>
+    </div>
+<% include ../partials/footer %>

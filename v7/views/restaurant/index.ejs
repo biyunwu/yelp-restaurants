@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+    <div class="container" style="margin-top: 20px;">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Welcome to the Reataurants NYC!</h1>
+                <p>A hub for Asian food enthusiasts.</p>
+                <a class="btn btn-md btn-primary" href="/restaurant/new">Add new restaurant</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container text-center">
+      <div class="row">
+            <% restaurants.forEach(function(restaurant){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6" style="margin-bottom: 10px;">
+                <a href="/restaurant/<%= restaurant._id %>">
+                    <div class="card">
+                      <img class="card-img-top " src="<%= restaurant.image%>" alt="An image of <%= restaurant.name %>">
+                      <div class="card-body" style="padding: 10px 10px">
+                        <p class="card-text"><%= restaurant.name %></p>
+                      </div>
+                    </div>
+                </a>
+            </div>
+            <% });%>
+      </div>
+    </div>
+    
+<% include ../partials/footer %>
